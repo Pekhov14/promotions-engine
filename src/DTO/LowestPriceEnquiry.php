@@ -2,6 +2,8 @@
 
 namespace App\DTO;
 
+use JetBrains\PhpStorm\Internal\TentativeType;
+
 class LowestPriceEnquiry implements PromotionEnquiryInterface
 {
     private ?int $productId;
@@ -110,5 +112,10 @@ class LowestPriceEnquiry implements PromotionEnquiryInterface
     public function setPromotionName(?string $promotion_name): void
     {
         $this->promotion_name = $promotion_name;
+    }
+
+    public function jsonSerialize(): array
+    {
+        return get_object_vars($this);
     }
 }
