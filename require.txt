@@ -1,1 +1,4 @@
 composer require serializer
+composer require doctrine
+
+php bin/console make:entity Product
